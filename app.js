@@ -87,11 +87,12 @@ document.getElementById('macbook-minus').addEventListener('click', function () {
 let phoneTotal = getInputValue('phone') * 1219;
 let caseTotal = getInputValue('case') * 1100;
 let macbookTotal = getInputValue('macbook') * 1450;
+count = 0;
 function removeItem(item) {
 
     const product = document.getElementById(item + '-item');
     product.style.display = 'none';
-
+    count++;
 
     if (item == 'phone') {
         phoneTotal = 0;
@@ -113,6 +114,14 @@ function removeItem(item) {
     document.getElementById('tax-amount').innerText = tax;
     document.getElementById('total-price').innerText = totalPrice;
 
+
+    //Checking if all the products are removed
+    if (count == 3) {
+        const checkoutSection = document.getElementById('checkout-section');
+        checkoutSection.style.display = 'none';
+        const checkoutButton = document.getElementById('checkout-btn');
+        checkoutButton.style.display = 'none';
+    }
 }
 
 //Phone Input Key
@@ -142,19 +151,4 @@ document.getElementById('macbook-number').addEventListener('keyup', function (ev
 
 
 
-//Hidding Checkout if all the products are removed
 
-// const phoneCart = document.getElementById('phone-item');
-
-
-// const caseCart = document.getElementById('case-item');
-
-// const macCart = document.getElementById('macbook-item');
-
-
-
-// const cartItems = document.getElementsByClassName('cart-item');
-
-// for (items of cartItems) {
-//     console.log(items);
-// }
