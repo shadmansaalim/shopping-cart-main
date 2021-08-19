@@ -1,9 +1,9 @@
 body{
-	background: #fff;
+	background: steelblue;
 }
 .cart{
-	margin: 100px 0;
-	background-color: #F6F5FA;;
+	
+	background-color: steelblue;;
 	padding: 60px 0;
 }
 .total-price{
@@ -54,3 +54,4 @@ body{
 	background-color: #2FBE70;
 	border: none;
 }
+
